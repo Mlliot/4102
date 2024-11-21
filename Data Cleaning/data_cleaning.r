@@ -8,14 +8,14 @@ library(readr)
 #   Score = c(85, 90, NA, 70, 88)
 # )
 
-file_path <- "test_data.csv"
+file_path <- "Data Cleaning/test_data.csv"
 data <- read_csv(file_path)
 
 clean_data <- function(data) {
 
-    if (file.exists("dirty_data.csv") || file.exists("cleaned_data.csv")) {
-        file.remove("dirty_data.csv")
-        file.remove("cleaned_data.csv")
+    if (file.exists("Data Cleaning/dirty_data.csv") || file.exists("Data Cleaning/cleaned_data.csv")) {
+        file.remove("Data Cleaning/dirty_data.csv")
+        file.remove("Data Cleaning/cleaned_data.csv")
     }
 
     if (!is.data.frame(data)) {
@@ -25,8 +25,8 @@ clean_data <- function(data) {
     incomplete_rows <- data[!complete.cases(data), ]
     cleaned_data <- na.omit(data)
   
-    write_csv(incomplete_rows, "dirty_data.csv")
-    write_csv(cleaned_data, "cleaned_data.csv")
+    write_csv(incomplete_rows, "Data Cleaning/dirty_data.csv")
+    write_csv(cleaned_data, "Data Cleaning/cleaned_data.csv")
   
     print("Uploaded Data:")
     print(data)
