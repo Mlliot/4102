@@ -1,12 +1,5 @@
-# install.packages("readr")         # Uncomment this line when first installing readr
+install.packages("readr")
 library(readr)
-
-# Uncomment lines 5-9 to test using test_data and comment out 11 and 12
-# data <- data.frame(
-#   ID = 1:5,
-#   Name = c("Alice", "Bob", "Charlie", NA, "Eve"),
-#   Score = c(85, 90, NA, 70, 88)
-# )
 
 file_path <- "Data Cleaning/test_data.csv"
 data <- read_csv(file_path)
